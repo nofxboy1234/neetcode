@@ -26,7 +26,7 @@
         }
       }
 
-      return letterCountMap.values().toArray();
+      return [...letterCountMap.values()];
     }
   }
 
