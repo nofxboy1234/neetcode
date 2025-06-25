@@ -5,28 +5,32 @@
      * @return {string[][]}
      */
     groupAnagrams(strs) {
-      const letterCountMap = new Map();
+      const anagramGroups = new Map(); // Stores key (frequency string) -> array of anagrams
 
-      const aCharCode = "a".charCodeAt(0);
+      for (const str of strs) {
+        // Create a frequency count array for the current string
+        const counts = new Array(26).fill(0); // 26 for 'a' through 'z'
 
-      for (let i = 0; i < strs.length; i++) {
-        const str = strs[i];
-        const letterCount = new Array(26).fill(0);
-
-        for (let j = 0; j < str.length; j++) {
-          letterCount[str.charCodeAt(j) - aCharCode]++;
+        for (let i = 0; i < str.length; i++) {
+          // Get character code and convert to 0-25 index
+          const charCode = str.charCodeAt(i) - "a".charCodeAt(0);
+          counts[charCode]++;
         }
 
-        const letterCountArrayStr = letterCount.toString();
+        // Convert the frequency array into a unique string key
+        // Example: "eat" -> [1,0,0,0,1,0,...1,...] -> "1#0#0#0#1#0#...#1#..."
+        const key = counts.join("#");
 
-        if (letterCountMap.has(letterCountArrayStr)) {
-          letterCountMap.get(letterCountArrayStr).push(str);
+        // Add the current string to the group corresponding to its key
+        if (anagramGroups.has(key)) {
+          anagramGroups.get(key).push(str);
         } else {
-          letterCountMap.set(letterCountArrayStr, [str]);
+          anagramGroups.set(key, [str]);
         }
       }
 
-      return [...letterCountMap.values()];
+      // Return all the values from the map, which are the grouped anagrams
+      return Array.from(anagramGroups.values());
     }
   }
 
