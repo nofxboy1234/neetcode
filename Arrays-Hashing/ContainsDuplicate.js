@@ -19,21 +19,21 @@ class Solution {
 
 {
   const solution = new Solution();
-  nums = [1, 2, 3, 3];
+  const nums = [1, 2, 3, 3];
   const result = solution.hasDuplicate(nums);
   console.log(result);
 }
 
 {
   const solution = new Solution();
-  nums = [1, 2, 3, 4];
+  const nums = [1, 2, 3, 4];
   const result = solution.hasDuplicate(nums);
   console.log(result);
 }
 
 {
   const solution = new Solution();
-  nums = [2, 2, 1, 1, 3, 1, 2, 3, 1, 4];
+  const nums = [2, 2, 1, 1, 3, 1, 2, 3, 1, 4];
   const result = solution.hasDuplicate(nums);
   console.log(result);
 }
