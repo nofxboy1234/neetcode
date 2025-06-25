@@ -91,13 +91,15 @@ The space complexity is determined by the amount of memory used that scales
 with the input size.
 
 letterCount Array: const letterCount = new Array(26).fill(0); This array 
-always has a fixed size of 26, regardless of the length of the input strings s and t. This means it consumes a constant amount of memory.
+always has a fixed size of 26, regardless of the length of the input strings 
+s and t. This means it consumes a constant amount of memory.
 
 aCharCode Variable: const aCharCode = "a".charCodeAt(0); This is a single 
 variable that occupies constant space.
 
 Combining these: All variables and data structures used by the function occupy a 
-fixed amount of memory that does not depend on the input size n. Therefore, the worst-case space complexity is O(1).
+fixed amount of memory that does not depend on the input size n. Therefore, the 
+worst-case space complexity is O(1).
 
 Summary:
 Worst-Case Time Complexity: O(n)
