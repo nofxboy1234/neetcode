@@ -4,13 +4,16 @@ class Solution {
    * @return {boolean}
    */
   hasDuplicate(nums) {
-    const tallies = {};
+    const seen = new Set();
 
     for (const num of nums) {
-      tallies[num] = (tallies[num] || 0) + 1;
+      if (seen.has(num)) {
+        return true;
+      }
+      seen.add(num);
     }
 
-    return Object.values(tallies).filter((tally) => tally >= 2).length > 0;
+    return false;
   }
 }
 
