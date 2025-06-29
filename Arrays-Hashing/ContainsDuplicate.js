@@ -1,3 +1,6 @@
+// The time complexity is determined by the operations that scale with the input size.
+// The space complexity is determined by the amount of memory used that scales with the input size.
+
 class Solution {
   /**
    * @param {number[]} nums
